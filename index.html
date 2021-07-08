@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <title>ping-pong</title>
+    <style>
+        body {
+            background-color: #EDC73F;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 4em;
+        }
+
+        #resetGame {
+            margin: 0 auto;
+        }
+
+        #card {
+            box-shadow: 0 0 0.5em black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ping Pong</h1>
+    <form id="name" action="/nowhere" class="column is-half is-offset-one-quarter">
+        <div>
+            <label for=" p1Name">Enter player 1 name</label>
+        </div>
+        <input type="text" name="p1Name" id="p1Name" placeholder="Player 1 name" class="input is-small is-rounded"
+            required>
+        <div>
+            <label for="p2Name">Enter player 2 name</label>
+        </div>
+        <input type="text" name="p2Name" placeholder="Player 2 name" id="p2Name" class="input is-small is-rounded"
+            required>
+        <button id="submit" style="display: block;margin:1em;" class="button is-success">Submit</button>
+    </form>
+
+    <section id="main">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <div id="card" class="card">
+                        <div class="card-image">
+                            <figure class="is-2by1">
+                                <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                                    alt="">
+                            </figure>
+                        </div>
+                        <header class="card-header">
+                            <p class="card-header-title">Ping Pong Score Keeper</p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <h1 class="title is-1"><span id="p1Display">0</span> to <span id="p2Display">0</span>
+                                </h1>
+                                <p class="subtitle">Use the buttons below to keep score</p>
+                            </div>
+
+                            <label for="playto" class="label is-large is-inline">Choose the winning score</label>
+                            <div class="select is-rounded">
+                                <select name="playto" id="playto">
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button id="p1Button" class="is-primary button card-footer-item">Player 1</button>
+                            <button id="p2Button" class="is-info button card-footer-item">Player 2</button>
+                            <button id="reset" class="is-danger button card-footer-item">Reset</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
